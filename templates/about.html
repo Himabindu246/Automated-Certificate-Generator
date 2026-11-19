@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Project</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+{% include "navbar.html" %}
+
+<div class="dashboard">
+
+    <h1>About Our Project</h1>
+
+    <h2>Automated Certificate Generator System</h2>
+
+    <p>
+        The Automated Certificate Generator System is a web-based application
+        developed using Python and Flask. It automatically generates certificates
+        for students using an Excel file or individual student details.
+    </p>
+
+    <br>
+
+    <h3>Project Features</h3>
+
+    <ul style="text-align:left; width:80%; margin:auto; line-height:2;">
+
+        <li>✅ Admin Login</li>
+
+        <li>✅ Dashboard</li>
+
+        <li>✅ Single Certificate Generation</li>
+
+        <li>✅ Multiple Certificate Generation</li>
+
+        <li>✅ Upload Excel File</li>
+
+        <li>✅ Search Certificate</li>
+
+        <li>✅ Certificate History</li>
+
+        <li>✅ Download Certificate</li>
+
+        <li>✅ Download ZIP File</li>
+
+
+
+        <li>✅ Export Student Details</li>
+
+    </ul>
+
+    <br><br>
+
+    <a href="{{ url_for('dashboard') }}">
+        <button class="btn-gray">
+            ⬅ Back to Dashboard
+        </button>
+    </a>
+
+</div>
+
+{% include "footer.html" %}
+
+</body>
+
+</html>

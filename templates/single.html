@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Generate Single Certificate</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+{% include "navbar.html" %}
+
+<div class="dashboard">
+
+    <h1>Automated Certificate Generator</h1>
+
+    <h2>Generate Single Certificate</h2>
+
+    <form action="{{ url_for('single') }}" method="POST">
+
+        <label><strong>Student Name</strong></label>
+
+        <br><br>
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Enter Student Name"
+            required>
+
+        <br><br>
+
+        <label><strong>Course Name</strong></label>
+
+        <br><br>
+
+        <input
+            type="text"
+            name="course"
+            placeholder="Enter Course Name"
+            required>
+            <label><strong>Start Date</strong></label>
+
+<br><br>
+
+<input
+    type="date"
+    name="start_date"
+    required>
+
+<br><br>
+
+<label><strong>End Date</strong></label>
+
+<br><br>
+
+<input
+    type="date"
+    name="end_date"
+    required>
+
+<br><br>
+
+        <br><br>
+
+        <button class="btn-green" type="submit">
+            🎓 Generate Certificate
+        </button>
+
+        <button class="btn-gray" type="reset">
+            🔄 Clear
+        </button>
+
+    </form>
+
+    <br><br>
+
+    <a href="{{ url_for('dashboard') }}">
+        <button class="btn-gray">
+            ⬅ Back to Dashboard
+        </button>
+    </a>
+
+</div>
+
+{% include "footer.html" %}
+
+</body>
+
+</html>

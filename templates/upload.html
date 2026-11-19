@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Upload Student Excel</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+{% include "navbar.html" %}
+
+<div class="dashboard">
+
+    <h1>Automated Certificate Generator</h1>
+
+    <h2>Upload Student Excel File</h2>
+
+    <p>Please select an Excel (.xlsx) file containing student details.</p>
+
+    <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+
+        <label><strong>Select Excel File</strong></label>
+
+        <br><br>
+
+        <input
+            type="file"
+            name="excel_file"
+            accept=".xlsx"
+            required>
+
+        <br><br>
+
+        <button class="btn-green" type="submit">
+            📂 Upload Excel
+        </button>
+
+        <button class="btn-gray" type="reset">
+            🔄 Clear
+        </button>
+
+    </form>
+
+    <br><br>
+
+    <a href="{{ url_for('read_excel') }}">
+        <button>
+            📄 View Uploaded Students
+        </button>
+    </a>
+
+    <br><br>
+
+    <a href="{{ url_for('generate_all') }}">
+        <button class="btn-green">
+            ⚡ Generate All Certificates
+        </button>
+    </a>
+
+    <br><br>
+
+    <a href="{{ url_for('dashboard') }}">
+        <button class="btn-gray">
+            ⬅ Back to Dashboard
+        </button>
+    </a>
+
+</div>
+
+{% include "footer.html" %}
+
+</body>
+
+</html>

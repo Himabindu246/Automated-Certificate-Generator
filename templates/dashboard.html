@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+{% include "navbar.html" %}
+
+<div class="dashboard">
+
+    <h1>Automated Certificate Generator</h1>
+
+    <h2>Admin Dashboard</h2>
+
+    <div class="cards">
+
+        <div class="card blue">
+            <h2>{{ total_students }}</h2>
+            <p>👨‍🎓 Total Students</p>
+        </div>
+
+        <div class="card green">
+            <h2>{{ total_certificates }}</h2>
+            <p>🏆 Total Certificates</p>
+        </div>
+
+        <div class="card orange">
+            <h2>{{ generated_today }}</h2>
+            <p>📅 Generated Today</p>
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <a href="{{ url_for('single') }}">
+        <button class="btn-green">
+            🎓 Generate Single Certificate
+        </button>
+    </a>
+
+    
+
+    <br><br>
+
+    <a href="{{ url_for('upload') }}">
+        <button>
+            📂 Upload Excel
+        </button>
+    </a>
+
+    <a href="{{ url_for('read_excel') }}">
+        <button>
+            📄 View Uploaded Students
+        </button>
+    </a>
+
+    <br><br>
+
+    <a href="{{ url_for('generate_all') }}">
+        <button class="btn-green">
+            ⚡ Generate All Certificates
+        </button>
+    </a>
+
+    <a href="{{ url_for('history') }}">
+        <button>
+            📜 Certificate History
+        </button>
+    </a>
+
+    <br><br>
+
+    <a href="{{ url_for('search') }}">
+        <button>
+            🔍 Search Certificate
+        </button>
+    </a>
+
+    <a 
+    href="{{ url_for('download_zip') }}"
+    class="btn btn-primary">
+    Download All Certificates (ZIP)
+
+</a>
+        </button>
+    </a>
+
+    <br><br>
+
+    <a href="{{ url_for('export_excel') }}">
+        <button class="btn-orange">
+            📊 Export Student Details
+        </button>
+    </a>
+
+    <a href="{{ url_for('about') }}">
+    <button>
+        ℹ About Project
+    </button>
+</a>
+
+    <a href="{{ url_for('logout') }}">
+        <button class="btn-red">
+            🚪 Logout
+        </button>
+    </a>
+
+</div>
+
+{% include "footer.html" %}
+
+</body>
+
+</html>

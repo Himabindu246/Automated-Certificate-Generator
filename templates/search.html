@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search Certificate</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+{% include "navbar.html" %}
+
+<div class="dashboard">
+
+    <h1>Automated Certificate Generator</h1>
+
+    <h2>Search Certificate</h2>
+
+    <p>Enter the student's name to search for a generated certificate.</p>
+
+    <form method="POST" action="{{ url_for('search') }}">
+
+        <label><strong>Student Name</strong></label>
+
+        <br><br>
+
+        <input
+            type="text"
+            name="student_name"
+            placeholder="Enter Student Name"
+            required>
+
+        <br><br>
+
+        <button class="btn-green" type="submit">
+            🔍 Search
+        </button>
+
+        <button class="btn-gray" type="reset">
+            🔄 Clear
+        </button>
+
+    </form>
+
+    <br>
+
+    {% if message %}
+
+        <h3 style="color:red;">
+            {{ message }}
+        </h3>
+
+    {% endif %}
+
+    {% if filename %}
+
+        <h3 style="color:green;">
+            ✅ Certificate Found
+        </h3>
+
+        <br>
+
+        <a href="{{ url_for('certificate', filename=filename) }}">
+            <button class="btn-green">
+                👁 Preview Certificate
+            </button>
+        </a>
+
+        <a href="{{ url_for('download_certificate', filename=filename) }}">
+            <button>
+                ⬇ Download Certificate
+            </button>
+        </a>
+
+    {% endif %}
+
+    <br><br>
+
+    <a href="{{ url_for('dashboard') }}">
+        <button class="btn-gray">
+            ⬅ Back to Dashboard
+        </button>
+    </a>
+
+</div>
+
+{% include "footer.html" %}
+
+</body>
+
+</html>

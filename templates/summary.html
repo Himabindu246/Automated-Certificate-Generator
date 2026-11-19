@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Project Summary</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+{% include "navbar.html" %}
+
+<div class="dashboard">
+
+<h1>Project Summary</h1>
+
+<p>
+
+Automated Certificate Generator is developed using
+Python, Flask, HTML, CSS and MySQL.
+
+</p>
+
+<p>
+
+The system automatically generates certificates
+from an uploaded Excel file.
+
+</p>
+
+<a href="{{ url_for('dashboard') }}">
+
+<button>Back to Dashboard</button>
+
+</a>
+
+</div>
+
+{% include "footer.html" %}
+
+</body>
+</html>

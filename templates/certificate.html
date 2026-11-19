@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Certificate Preview</title>
+</head>
+<body>
+<h1 style="text-align:center;">Certificate Preview</h1>
+
+
+<img src="{{ url_for('preview', filename=filename) }}" width="950">
+
+<br><br>
+
+<div style="text-align:center; margin:20px;">
+
+
+    <a href="{{ url_for('download_pdf', filename=filename) }}">
+    <button>📄 Download Certificate (PDF)</button>
+</a>
+
+
+<button onclick="window.print()" style="background:blue; color:white; padding:10px 20px; border:none; border-radius:5px;">
+    Print
+</button>
+
+<a href="{{ url_for('dashboard') }}">
+    <button style="background:red; color:white; padding:10px 20px; border:none; border-radius:5px;">
+        Back
+    </button>
+</a>
+
+</div>
+
+</body>
+</html>

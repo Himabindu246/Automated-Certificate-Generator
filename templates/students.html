@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+{% include "navbar.html" %}
+
+<div class="dashboard">
+
+<h1>Uploaded Students</h1>
+
+<table border="1" cellpadding="10">
+
+<tr>
+<th>Name</th>
+<th>Course</th>
+<th>Start Date</th>
+<th>End Date</th>
+</tr>
+
+{% for student in students %}
+
+<tr>
+
+<td>{{ student["Name"] }}</td>
+
+<td>{{ student["Course"] }}</td>
+
+<td>{{ student["Start Date"] }}</td>
+
+<td>{{ student["End Date"] }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="{{ url_for('dashboard') }}">
+<button>Back</button>
+</a>
+
+</div>
+
+{% include "footer.html" %}
+
+</body>
+</html>
