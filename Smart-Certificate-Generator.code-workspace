@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "../certificate_generator"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../Documents"
+		},
+		{
+			"path": "../../../Downloads"
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../Pictures"
+		},
+		{
+			"path": "../../../Music"
+		}
+	],
+	"settings": {}
+}
